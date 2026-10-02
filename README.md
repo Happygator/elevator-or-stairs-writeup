@@ -6,7 +6,7 @@ I live on the 5th floor of my building and one of the two elevators is out of se
  
  - Go to the 1st floor stairs and climb 4 floors. This will always take me the same amount of time. I would prefer this over the elevator, but only if it's faster!
 
-The only thing I really care about in this situation is how fast it takes me to get back to my cozy Marill plushie. 
+The only thing I really care about in this situation is how long it takes me to get back to my cozy Marill plushie. 
 
 ![plushie](assets/plushie.jpg)
 
