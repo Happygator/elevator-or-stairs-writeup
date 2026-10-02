@@ -48,12 +48,12 @@ This changes the number of expected stops(higher floor means more floors between
 |Floor|Time for stairs|Time for elevator with X people|You should take the elevator...|
 |--|--|--|--|
 |2F|8s|18s|Never[^convenience]|
-|3F|16s|$20 + (1 - (\frac67)^X)$ seconds|Never|
-|4F|24s|$22 + (1 - 2(\frac67)^X)$ seconds|If you're alone|
-|5F|33s|$24 + (1 - 3(\frac67)^X)$ seconds|If there are 1 or fewer others|
-|6F|43s|$26 + (1 - 4(\frac67)^X)$ seconds|If there are 1 or fewer others|
-|7F|54s|$28 + (1 - 5(\frac67)^X)$ seconds|If there are 2 or fewer others|
-|8F|66s|$30 + (1 - 6(\frac67)^X)$ seconds|If there are 3 or fewer others|
+|3F|16s|$20 + 16(1 - (\frac67)^X)$ seconds|Never|
+|4F|24s|$22 + 32(1 - 2(\frac67)^X)$ seconds|If you're alone|
+|5F|33s|$24 + 48(1 - 3(\frac67)^X)$ seconds|If there are 1 or fewer others|
+|6F|43s|$26 + 64(1 - 4(\frac67)^X)$ seconds|If there are 1 or fewer others|
+|7F|54s|$28 + 80(1 - 5(\frac67)^X)$ seconds|If there are 2 or fewer others|
+|8F|66s|$30 + 96(1 - 6(\frac67)^X)$ seconds|If there are 3 or fewer others|
 
 ![graph](assets/graph2.jpg)
 
