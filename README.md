@@ -31,14 +31,18 @@ After briefly timing the situation:
 Accurately finding the amount of time the elevator takes on average to get to 1F before I can get on it will be very difficult. The elevator can be in all manner of states(Going up? Down? Where will it stop before heading towards 1F?) that would require lots of calculations to determine the average time the elevator takes. Instead, we can put this aside and only calculate it if necessary.
 
 Assuming I don't need to wait for the elevator, the time the elevator takes is solely determined by how many stops are required. We can use linearity of expectation[^linearity] to calculate the expected number of stops. The probability of one specific floor not needing to be stopped at for X people is $1 - (\frac{6}{7})^X$ and there are 3 floors between 1F and 5F, so:
-$$E[stops] = 3 (1 - (\frac67)^X)$$
+
+$E[stops] = 3 (1 - (\frac67)^X)$
+
+
 This means that with X people the elevator will take $24 + (16)(3)(1 - (\frac67)^X)$ seconds. Here's how it compares to the stairs:
 
-![graph](assets/graph1.jpg)
+![graph](assets/graph.jpg)
 
 It looks like I should almost always be taking the stairs. This is the elevator's best-case scenario, when it doesn't need any time to get to 1F, and it's only beating the stairs when there are very few people. As a result, when I reach my building, I should take the stairs if there are 2 or more people. If not, I should still take the stairs if the elevator doesn't immediately arrive, and the elevator if it does. Problem solved!
 
-What if I was on a different floor? This changes the number of expected stops(higher floor means more floors between 1F and your floor), how long the elevator takes, and the amount of time required to go through the stairs. I roughly estimated the time for the elevator to be **16 seconds + 2 per floor[^elevatortime] + 16 per stop** and the time taken from stairs to be **8 seconds per floor** and then **+1 for each floor beyond the 3rd**(from legs getting tired), which yields the following.
+## What if I was on a different floor?
+This changes the number of expected stops(higher floor means more floors between 1F and your floor), how long the elevator takes, and the amount of time required to go through the stairs. I roughly estimated the time for the elevator to be **16 seconds + 2 per floor[^elevatortime] + 16 per stop** and the time taken from stairs to be **8 seconds per floor** and then **+1 for each floor beyond the 3rd**(from legs getting tired), which yields the following.
 
 (Note that we are still assuming the elevator is already at 1F.)
 |Floor|Time for stairs|Time for elevator with X people|You should take the elevator...|
@@ -55,7 +59,7 @@ What if I was on a different floor? This changes the number of expected stops(hi
 
 ## Closing Thoughts
 
-In this problem, I didn't need to estimate how long the elevator would take to get to 1F when I pressed the button. Calculating this accurately would depend on the following:
+In this problem, I didn't need to estimate how long the elevator would take to get to 1F when I pressed the button, because the elevator was already usually slower. Calculating the elevator wait accurately would depend on the following:
 - **Rate of students entering the building**, which would also depend on time of day. This would likely be simulated through a [Poisson process](https://www.geeksforgeeks.org/maths/poisson-processes/).
 - **Number of students already waiting**, which combine with the rate of students entering the building to allow an approximation of how long they have been waiting for the elevator. 
 - **Rate of students exiting the building**, which influences how often the elevator would be going from high floors to 1F and how often it would be stopping along the way.
